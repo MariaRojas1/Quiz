@@ -42,9 +42,11 @@ app.use('/materias', require('./routes/materias'))
 app.use('/periodo_academico', require('./routes/periodo_academico'))
 app.use('/estudiantes', require('./routes/estudiantes'))
 app.use('/notas', require('./routes/notas'))
+app.use('/usuario', require('./routes/usuario'))
+app.use('/productos', require('./routes/productos'))
 
     //public
-app.unsubscribe(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //arranca el servidor
 app.listen(app.get('port'), () => {

@@ -6,3 +6,12 @@ route.get ('/listar', async(req, res) => {
     res.render ('materias/listar', { usua });
 
 })
+
+route.post ('listarmaterias', async(req, res)=>{
+    const {materia} = req.body
+    const newMateria ={materia};
+    await pool.query('insert into materias set ?', [newMateria]);
+    Console.log(req,body);
+    res.send('materia/mostrar_materia');
+
+})
